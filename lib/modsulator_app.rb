@@ -11,10 +11,13 @@ module Spreadsheet
     format :txt
     default_format :txt
 
-    # rescue_from :all do |e|
-    #   logger.error("Caught an exception: #{e.message}")
-    #   rack_response(e.message, 500)
-    # end
+    rescue_from :all do |e|
+      logger.error("Caught an exception: #{e.message}")
+      logger.error(e.backtrace.join("\n"))
+      error!("Caught an exception: #{e.message}")
+    end
+
+    logger LOG
 
     helpers do
       def logger
@@ -40,6 +43,7 @@ module Spreadsheet
         # builds a proper hash from the supplied JSON that would be appropriate to pass to Modsulator
         # When the format is specified above as txt, 'request.content_type' will be the Content-Type header value
         # (e.g. application/json or text/plain). In that case, you can create a (JSON) hash using 'JSON.parse(request.body.read)'.
+        logger.info("got POST")
         json_hash = JSON.parse(request.body.read)
         mods_converter = Modsulator.new('', json_hash['rows'])
         mods_converter.convert_rows
