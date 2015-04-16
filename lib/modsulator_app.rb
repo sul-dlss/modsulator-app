@@ -12,8 +12,8 @@ module Spreadsheet
     default_format :txt
 
     rescue_from :all do |e|
-      logger.error("Caught an exception: #{e.message}")
-      logger.error(e.backtrace.join("\n"))
+      LOG.error("Caught an exception: #{e.message}")
+      LOG.error(e.backtrace.join("\n"))
       error!("Caught an exception: #{e.message}")
     end
 
