@@ -17,7 +17,7 @@ module Spreadsheet
       error!("Caught an exception: #{e.message}")
     end
 
-    logger LOG
+#    logger LOG
 
     helpers do
       def logger
