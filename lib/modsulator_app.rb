@@ -19,17 +19,17 @@ module Spreadsheet
 
 #    logger LOG
 
-    helpers do
-      def logger
-        ModsulatorAPI.logger
-      end
-    end
+    # helpers do
+    #   def logger
+    #     ModsulatorAPI.logger
+    #   end
+    # end
 
     resource :about do
       # Simple ping to see if the application is up
       # GET http://localhost:9292/v1/about
       get do
-        logger.info("Got a GET /v1/about request")
+        LOG.info("Got a GET /v1/about request")
         @version ||= IO.readlines('VERSION').first
         "ok\nversion: #{@version}"
       end
@@ -44,7 +44,7 @@ module Spreadsheet
         # builds a proper hash from the supplied JSON that would be appropriate to pass to Modsulator
         # When the format is specified above as txt, 'request.content_type' will be the Content-Type header value
         # (e.g. application/json or text/plain). In that case, you can create a (JSON) hash using 'JSON.parse(request.body.read)'.
-        logger.info("got POST")
+        LOG.info("got POST")
         json_hash = JSON.parse(request.body.read)
         mods_converter = Modsulator.new('', json_hash['rows'])
         mods_converter.convert_rows
