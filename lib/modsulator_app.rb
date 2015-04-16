@@ -30,7 +30,8 @@ module Spreadsheet
       # GET http://localhost:9292/v1/about
       get do
         logger.info("Got a GET /v1/about request")
-        "ok!\n"
+        @version ||= IO.readlines('VERSION').first
+        "ok\nversion: #{@version}"
       end
     end
 
