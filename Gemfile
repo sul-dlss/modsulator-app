@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 gem "grape", "0.11.0"
-gem "modsulator", :git => 
+gem "modsulator", :git => 'https://github.com/sul-dlss/modsulator'
 
 group :development do
   gem "pry-debugger"
