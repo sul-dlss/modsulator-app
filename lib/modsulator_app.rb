@@ -47,7 +47,7 @@ module Spreadsheet
         LOG.info("got POST")
         json_hash = JSON.parse(request.body.read)
         mods_converter = Modsulator.new('', json_hash['rows'])
-        mods_converter.convert_rows
+        mods_converter.convert_rows(json_hash['filename'])
       end
     end
 
@@ -60,7 +60,7 @@ module Spreadsheet
       end
     end
 
-    resource :version do
+    resource :modsulator_version do
 
       # GET http://localhost:9292/v1/version
       get do
