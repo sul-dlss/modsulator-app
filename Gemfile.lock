@@ -1,10 +1,10 @@
 GIT
   remote: https://github.com/sul-dlss/modsulator
-  revision: 02735dbd9eae0279ebdaaa9d9d3ec002ef64287f
+  revision: d6924cf2ffa30003ac1bba781dd6132219e8d184
   specs:
-    modsulator (0.0.0)
+    modsulator (0.0.1)
       activesupport (>= 3.0)
-      equivalent-xml
+      equivalent-xml (>= 0.6.0)
       nokogiri
       roo (>= 1.1)
 
@@ -53,7 +53,7 @@ GEM
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     equalizer (0.0.11)
-    equivalent-xml (0.5.1)
+    equivalent-xml (0.6.0)
       nokogiri (>= 1.4.3)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
