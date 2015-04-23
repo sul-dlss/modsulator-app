@@ -37,6 +37,13 @@ module Spreadsheet
 
     resource :modsulator do
 
+      # curl --form  file=@Fitch_Chavez.xml http://localhost:9292/v1/modsulator_upload
+      post do
+        mods_converter = Modsulator.new(File.new(params[:file][:tempfile]), params[:file][:filename])
+        mods_converter.convert_rows()
+      end
+    end
+
       # POST http://localhost:9292/v1/modsulator
       post do
 
