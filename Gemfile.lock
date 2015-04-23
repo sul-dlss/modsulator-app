@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/sul-dlss/modsulator
-  revision: d6924cf2ffa30003ac1bba781dd6132219e8d184
+  revision: 88866dc3087234132603f119b8c2a432d605442c
   specs:
-    modsulator (0.0.1)
+    modsulator (0.0.2)
       activesupport (>= 3.0)
       equivalent-xml (>= 0.6.0)
       nokogiri
@@ -42,7 +42,7 @@ GEM
     coderay (1.1.0)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
-    colorize (0.7.5)
+    colorize (0.7.7)
     columnize (0.9.0)
     debugger (1.6.8)
       columnize (>= 0.3.1)
