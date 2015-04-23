@@ -44,20 +44,6 @@ module Spreadsheet
       end
     end
 
-      # POST http://localhost:9292/v1/modsulator
-      post do
-
-        # When the format is specified above as json, params['rows'] is an array of hashes, so Grape actually
-        # builds a proper hash from the supplied JSON that would be appropriate to pass to Modsulator
-        # When the format is specified above as txt, 'request.content_type' will be the Content-Type header value
-        # (e.g. application/json or text/plain). In that case, you can create a (JSON) hash using 'JSON.parse(request.body.read)'.
-        LOG.info("got POST")
-        json_hash = JSON.parse(request.body.read)
-        mods_converter = Modsulator.new('', json_hash['rows'])
-        mods_converter.convert_rows(json_hash['filename'])
-      end
-    end
-
     resource :normalizer do
 
       # POST http://localhost:9292/v1/normalizer
