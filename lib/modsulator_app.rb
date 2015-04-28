@@ -23,7 +23,7 @@ module Spreadsheet
       get do
         LOG.info("Got a GET /v1/about request")
         @version ||= IO.readlines('VERSION').first
-        "ok\nversion: #{@version}"
+        "modsulator-api version #{@version}"
       end
     end
 
