@@ -129,4 +129,5 @@ DEPENDENCIES
   lyberteam-capistrano-devel
   modsulator!
   rack-test
-  rspec
+  rake
+  rspec (>= 3.0)
