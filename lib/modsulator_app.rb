@@ -17,14 +17,6 @@ module Spreadsheet
       error!("Caught an exception: #{e.message}")
     end
 
-#    logger LOG
-
-    # helpers do
-    #   def logger
-    #     ModsulatorAPI.logger
-    #   end
-    # end
-
     resource :about do
       # Simple ping to see if the application is up
       # GET http://localhost:9292/v1/about
@@ -37,7 +29,7 @@ module Spreadsheet
 
     resource :modsulator do
 
-      # curl --form  file=@Fitch_Chavez.xml http://localhost:9292/v1/modsulator_upload
+      # curl --form  file=@Fitch_Chavez.xml http://localhost:9292/v1/modsulator
       post do
         mods_converter = Modsulator.new(File.new(params[:file][:tempfile]), params[:file][:filename])
         mods_converter.convert_rows()
@@ -60,8 +52,6 @@ module Spreadsheet
         Gem.loaded_specs['modsulator'].version.version
       end
     end
-    
 
   end #class
-
 end # module
