@@ -47,7 +47,7 @@ module Spreadsheet
 
     resource :modsulator_version do
 
-      # GET http://localhost:9292/v1/version
+      # GET http://localhost:9292/v1/modsulator_version
       get do
         Gem.loaded_specs['modsulator'].version.version
       end
