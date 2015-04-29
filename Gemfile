@@ -4,6 +4,7 @@ gem "grape", "0.11.0"
 gem "modsulator", :git => 'https://github.com/sul-dlss/modsulator'
 gem "rack-test", :require => "rack/test"
 gem "rake"
+gem "bundler"
 gem "rspec", '>= 3.0'
 
 group :test do

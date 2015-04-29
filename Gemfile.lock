@@ -122,6 +122,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bundler
   capistrano (~> 3.0)
   capistrano-bundler (~> 1.1)
   equivalent-xml (>= 0.6.0)
