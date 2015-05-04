@@ -21,7 +21,6 @@ module Spreadsheet
       # Simple ping to see if the application is up
       # GET http://localhost:9292/v1/about
       get do
-        LOG.info("Got a GET /v1/about request")
         @version ||= IO.readlines('VERSION').first
         "modsulator-api version #{@version}"
       end
