@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<mods xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/mods/v3" version="3.5" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
+  <titleInfo>
+    <title>Cesar Chavez at various rallies and marches 1972-1973</title>
+  </titleInfo>
+  <name>
+    <namePart>Fitch, Bob</namePart>
+    <role>
+      <roleTerm type="text">creator</roleTerm>
+    </role>
+  </name>
+  <typeOfResource>still image</typeOfResource>
+  <originInfo>
+    <dateCreated keyDate="yes">1972</dateCreated>
+    <dateIssued keyDate="yes">1976</dateIssued>
+  </originInfo>
+  <language>
+    <languageTerm type="text">English</languageTerm>
+  </language>
+  <subject>
+    <name authority="http://lccn.loc.gov/n50038304">
+      <namePart>Chavez, Cesar, 1927-1993</namePart>
+    </name>
+  </subject>
+</mods>

@@ -27,10 +27,17 @@ describe Spreadsheet::ModsulatorAPI do
     expect(EquivalentXml.equivalent?(returned_xml, expected_xml, opts = { :ignore_attr_values => 'datetime'})).to be_truthy
   end
 
-  it "returns normalized XML" do
+  it "returns normalized XML given a spreadsheet" do
     post "/v1/modsulator", "file" => Rack::Test::UploadedFile.new(File.join(FIXTURES_DIR, 'crowdsourcing_bridget_1.xlsx'), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
     returned_xml = Nokogiri::XML(last_response.body)
     expected_xml = Nokogiri::XML(File.read(File.join(FIXTURES_DIR, 'crowdsourcing_bridget_1.xml')))
     expect(EquivalentXml.equivalent?(returned_xml, expected_xml, opts = { :ignore_attr_values => 'datetime'})).to be_truthy
+  end
+
+  it "returns normalized MODS XML given ugly MODS XML" do
+    post "/v1/normalizer", File.read(File.join(FIXTURES_DIR, 'denormalized.xml'))
+    returned_xml = last_response.body
+    expected_xml = File.read(File.join(FIXTURES_DIR, 'normalized.xml'))
+    expect(returned_xml.to_s).to eq(expected_xml.to_s)
   end
 end
