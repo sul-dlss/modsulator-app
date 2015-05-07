@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/sul-dlss/modsulator
-  revision: 526dc64c08eaedbdb790db1389f224d2bdff3635
+  revision: c02bd3e02cfa1fcaf2f82758ae8f9492fa78416e
   specs:
-    modsulator (0.0.2)
+    modsulator (0.0.4)
       activesupport (>= 3.0)
       equivalent-xml (>= 0.6.0)
       nokogiri
@@ -75,7 +75,7 @@ GEM
     i18n (0.7.0)
     ice_nine (0.11.1)
     json (1.8.2)
-    lyberteam-capistrano-devel (3.1.0)
+    lyberteam-capistrano-devel (3.2.0)
       capistrano (~> 3.0)
       capistrano-bundle_audit (>= 0.0.3)
       capistrano-one_time_key
@@ -92,7 +92,7 @@ GEM
     netrc (0.10.3)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
-    rack (1.6.0)
+    rack (1.6.1)
     rack-accept (0.4.5)
       rack (>= 0.4)
     rack-mount (0.8.3)
