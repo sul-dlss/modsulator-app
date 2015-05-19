@@ -30,7 +30,7 @@ module Spreadsheet
 
       # curl --form  file=@Fitch_Chavez.xml http://localhost:9292/v1/modsulator
       post do
-        mods_converter = Modsulator.new(File.new(params[:file][:tempfile]), params[:file][:filename])
+        mods_converter = Modsulator.new(File.new(params[:file][:tempfile]), params[:filename])
         mods_converter.convert_rows()
       end
     end
@@ -49,6 +49,14 @@ module Spreadsheet
       # GET http://localhost:9292/v1/modsulator_version
       get do
         Gem.loaded_specs['modsulator'].version.version
+      end
+    end
+
+    resource :spreadsheet do
+
+      # GET http://localhost:9292/v1/spreadsheet
+      get do
+        Modsulator.get_template_spreadsheet()
       end
     end
 
