@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 gem "grape", "0.11.0"
-gem "modsulator"
+gem 'modsulator', '~> 0.0.5'
 gem "rack-test", :require => "rack/test"
 gem "bundler"
 gem 'coveralls', require: false

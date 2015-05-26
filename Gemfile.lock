@@ -152,7 +152,7 @@ DEPENDENCIES
   equivalent-xml (>= 0.6.0)
   grape (= 0.11.0)
   lyberteam-capistrano-devel
-  modsulator
+  modsulator (~> 0.0.5)
   rack-test
   rake
   rspec (>= 3.0)
