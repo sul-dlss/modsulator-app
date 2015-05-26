@@ -70,7 +70,7 @@ GEM
       capistrano-bundle_audit (>= 0.0.3)
       capistrano-one_time_key
       capistrano-releaseboard
-    mime-types (2.5)
+    mime-types (2.6.1)
     mini_portile (0.6.2)
     minitest (5.6.1)
     modsulator (0.0.5)
