@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (4.2.1)
+    activesupport (4.2.3)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
@@ -64,7 +64,7 @@ GEM
       domain_name (~> 0.5)
     i18n (0.7.0)
     ice_nine (0.11.1)
-    json (1.8.2)
+    json (1.8.3)
     lyberteam-capistrano-devel (3.2.0)
       capistrano (~> 3.0)
       capistrano-bundle_audit (>= 0.0.3)
@@ -72,7 +72,7 @@ GEM
       capistrano-releaseboard
     mime-types (2.6.1)
     mini_portile (0.6.2)
-    minitest (5.6.1)
+    minitest (5.7.0)
     modsulator (0.0.6)
       activesupport (>= 3.0)
       equivalent-xml (>= 0.6.0)
@@ -87,7 +87,7 @@ GEM
     netrc (0.10.3)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
-    rack (1.6.1)
+    rack (1.6.4)
     rack-accept (0.4.5)
       rack (>= 0.4)
     rack-mount (0.8.3)
@@ -156,3 +156,6 @@ DEPENDENCIES
   rack-test
   rake
   rspec (>= 3.0)
+
+BUNDLED WITH
+   1.10.4
