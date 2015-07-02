@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "grape", "0.11.0"
+gem "grape", "0.12.0"
 gem 'modsulator', '~> 0.0.5'
 gem "rack-test", :require => "rack/test"
 gem "bundler"
