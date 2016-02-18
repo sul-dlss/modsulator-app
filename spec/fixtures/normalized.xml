@@ -11,8 +11,8 @@
   </name>
   <typeOfResource>still image</typeOfResource>
   <originInfo>
-    <dateCreated keyDate="yes">1972</dateCreated>
-    <dateIssued keyDate="yes">1976</dateIssued>
+    <dateCreated keyDate="yes" point="start">1972</dateCreated>
+    <dateIssued keyDate="yes" point="start">1976</dateIssued>
   </originInfo>
   <language>
     <languageTerm type="text">English</languageTerm>

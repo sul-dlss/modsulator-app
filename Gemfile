@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
-gem "grape", "0.12.0"
-gem 'modsulator', '~> 0.0.5'
+gem "grape"
+gem 'modsulator'
 gem "bundler"
 
 group :test do
