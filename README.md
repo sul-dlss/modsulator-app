@@ -3,5 +3,4 @@
 
 
 # modsulator-app
-A Grape API for the MODSulator.
-
+A Grape API for the MODSulator. This API is used by Argo for spreadsheet bulk upload.
