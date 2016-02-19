@@ -27,6 +27,8 @@ GEM
       sshkit (~> 1.2)
     capistrano-one_time_key (0.0.1)
       capistrano (~> 3.0)
+    capistrano-passenger (0.2.0)
+      capistrano (~> 3.0)
     capistrano-releaseboard (0.0.1)
       faraday
     coercible (1.0.0)
@@ -41,6 +43,11 @@ GEM
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     diff-lcs (1.2.5)
+    dlss-capistrano (3.2.0)
+      capistrano (~> 3.0)
+      capistrano-bundle_audit (>= 0.0.3)
+      capistrano-one_time_key
+      capistrano-releaseboard
     docile (1.1.5)
     domain_name (0.5.20160128)
       unf (>= 0.0.5, < 1.0.0)
@@ -65,11 +72,6 @@ GEM
     i18n (0.7.0)
     ice_nine (0.11.2)
     json (1.8.3)
-    lyberteam-capistrano-devel (3.2.0)
-      capistrano (~> 3.0)
-      capistrano-bundle_audit (>= 0.0.3)
-      capistrano-one_time_key
-      capistrano-releaseboard
     mime-types (2.99)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
@@ -147,10 +149,11 @@ DEPENDENCIES
   bundler
   capistrano (~> 3.0)
   capistrano-bundler (~> 1.1)
+  capistrano-passenger
   coveralls
+  dlss-capistrano (~> 3.0)
   equivalent-xml (>= 0.6.0)
   grape
-  lyberteam-capistrano-devel
   modsulator
   rack-test
   rake
