@@ -5,12 +5,11 @@ set :application, 'modsulator-app'
 set :repo_url, 'https://github.com/sul-dlss/modsulator-app'
 
 # Prompt for the correct username
-ask(:user, 'enter the app username')
+set :user, 'modsulator'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
-ask(:home_parent_dir, %{Enter the full path of the parent of the home dir (e.g. /home)})
-set :deploy_to, "#{File.join fetch(:home_parent_dir), fetch(:user), fetch(:application)}"
+set :deploy_to, "/opt/app/#{fetch(:user)}/#{fetch(:application)}"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -47,12 +46,12 @@ namespace :deploy do
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
       # Your restart mechanism here, for example:
-      execute :touch, release_path.join('tmp/restart.txt')
+      #execute :touch, release_path.join('tmp/restart.txt')
     end
   end
 
   after :publishing, :restart
-  
+
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
