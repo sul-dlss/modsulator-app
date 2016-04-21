@@ -8,7 +8,7 @@ set :repo_url, 'https://github.com/sul-dlss/modsulator-app'
 set :user, 'modsulator'
 
 # Default branch is :master
-# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
+ ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 set :deploy_to, "/opt/app/#{fetch(:user)}/#{fetch(:application)}"
 
 # Default branch is :master
