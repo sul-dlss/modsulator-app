@@ -30,6 +30,7 @@ module Spreadsheet
 
       # curl --form  file=@Fitch_Chavez.xml http://localhost:9292/v1/modsulator
       post do
+        LOG.error("Tommy: here")
         puts("Tommy: received fileparams = #{params[:file][:tempfile]} and filename = #{params[:filename]}")
         mods_converter = Modsulator.new(File.new(params[:file][:tempfile]), params[:filename])
         puts("Tommy: mods_converter = #{mods_converter}")
