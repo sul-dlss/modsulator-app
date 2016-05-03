@@ -33,7 +33,7 @@ module Spreadsheet
         LOG.error("Tommy: here")
         LOG.error("Tommy: params = #{params}")
         LOG.error("Tommy: received fileparams = #{params[:file]} and filename = #{params[:filename]}")
-        mods_converter = Modsulator.new(File.new(params[:file][:tempfile]), params[:filename])
+        mods_converter = Modsulator.new(File.new(params[:file]), params[:filename])
         puts("Tommy: mods_converter = #{mods_converter}")
         mods_converter.convert_rows()
         puts("Tommy: completed")
