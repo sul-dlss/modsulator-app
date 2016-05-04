@@ -38,6 +38,7 @@ module Spreadsheet
         LOG.error("Tommy: mods_converter = #{mods_converter}")
         result = mods_converter.convert_rows()
         LOG.error("Tommy: completed and result its #{result}")
+        return result
       end
     end
 
