@@ -36,8 +36,8 @@ module Spreadsheet
         LOG.error("Tommy: received fileparams = #{params[:file]} and tempfile = #{params[:file][:tempfile]} and filename = #{params[:filename]}")
         mods_converter = Modsulator.new(File.new(params[:file][:tempfile]), params[:filename])
         LOG.error("Tommy: mods_converter = #{mods_converter}")
-        mods_converter.convert_rows()
-        LOG.error("Tommy: completed")
+        result = mods_converter.convert_rows()
+        LOG.error("Tommy: completed and result its #{result}")
       end
     end
 
