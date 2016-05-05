@@ -30,15 +30,15 @@ module Spreadsheet
 
       # curl --form  file=@Fitch_Chavez.xml http://localhost:9292/v1/modsulator
       post do
-        LOG.error("Tommy: here")
-        LOG.error("Tommy: params = #{params}")
-        LOG.error("Tommy: inspect #{params[:file].inspect}")
-        LOG.error("Tommy: received fileparams = #{params[:file]} and tempfile = #{params[:file][:tempfile]} and filename = #{params[:filename]}")
+        # LOG.error("Tommy: here")
+        # LOG.error("Tommy: params = #{params}")
+        # LOG.error("Tommy: inspect #{params[:file].inspect}")
+        # LOG.error("Tommy: received fileparams = #{params[:file]} and tempfile = #{params[:file][:tempfile]} and filename = #{params[:filename]}")
         mods_converter = Modsulator.new(File.new(params[:file][:tempfile]), params[:filename])
-        LOG.error("Tommy: mods_converter = #{mods_converter}")
-        result = mods_converter.convert_rows()
-        LOG.error("Tommy: completed and result its #{result}")
-        result
+        # LOG.error("Tommy: mods_converter = #{mods_converter}")
+        mods_converter.convert_rows()
+        # LOG.error("Tommy: completed and result its #{result}")
+        # result
       end
     end
 
@@ -47,15 +47,15 @@ module Spreadsheet
       # POST http://localhost:9292/v1/normalizer
       post do
         normalizer = Normalizer.new
-        outs = File.open("/tmp/received_file", "w")
+        # outs = File.open("/tmp/received_file", "w")
         input_file = File.open(params[:file][:tempfile])
         xml = input_file.read
         input_file.close
-        outs.puts("Tommy: file = #{xml}")
-        outs.close
+        # outs.puts("Tommy: file = #{xml}")
+        # outs.close
 
         normalizer.normalize_xml_string(xml)
-        LOG.error("Tommy: finished")
+        # LOG.error("Tommy: finished")
       end
     end
 
