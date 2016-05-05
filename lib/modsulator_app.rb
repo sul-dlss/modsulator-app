@@ -48,9 +48,13 @@ module Spreadsheet
       post do
         normalizer = Normalizer.new
         outs = File.open("/tmp/received_file", "w")
-        outs.puts("Tommy: file = #{request.body.read}")
+        input_file = File.open(params[:file][:tempfile])
+        xml = input_file.read
+        input_file.close
+        outs.puts("Tommy: file = #{xml}")
         outs.close
-        normalizer.normalize_xml_string(request.body.read)
+
+        normalizer.normalize_xml_string(xml)
         LOG.error("Tommy: finished")
       end
     end
