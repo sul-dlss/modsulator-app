@@ -52,10 +52,11 @@ module Spreadsheet
         xml = input_file.read
         input_file.close
         # outs.puts("Tommy: file = #{xml}")
-        # outs.close
+        #outs.close
 
-        normalizer.normalize_xml_string(xml)
-        # LOG.error("Tommy: finished")
+        result = normalizer.normalize_xml_string(xml)
+        LOG.error("Tommy: finished")
+        result
       end
     end
 
