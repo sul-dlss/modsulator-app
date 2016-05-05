@@ -47,7 +47,9 @@ module Spreadsheet
       # POST http://localhost:9292/v1/normalizer
       post do
         normalizer = Normalizer.new
-        LOG.error("Tommy: body = #{request.body.read}")
+        outs = File.open("/tmp/received_file", "w")
+        outs.puts("Tommy: file = #{request.body.read}")
+        outs.close
         normalizer.normalize_xml_string(request.body.read)
         LOG.error("Tommy: finished")
       end
