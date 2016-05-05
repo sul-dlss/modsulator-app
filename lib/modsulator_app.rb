@@ -46,6 +46,7 @@ module Spreadsheet
 
       # POST http://localhost:9292/v1/normalizer
       post do
+        LOG.error("Tommy: starting")
         normalizer = Normalizer.new
         # outs = File.open("/tmp/received_file", "w")
         input_file = File.open(params[:file][:tempfile])
