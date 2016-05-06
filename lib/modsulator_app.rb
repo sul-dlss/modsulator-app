@@ -49,18 +49,18 @@ module Spreadsheet
         LOG.error("Tommy: starting")
         normalizer = Normalizer.new
         LOG.error("Tommy: have a normalizer")
-        outs = File.open("/tmp/received_file", "w")
+        #outs = File.open("/tmp/received_file", "w")
         input_file = File.open(params[:file][:tempfile])
         xml = input_file.read
         input_file.close
-        outs.puts("Tommy: file = #{xml}")
+        #outs.puts("Tommy: file = #{xml}")
 
         LOG.error("Tommy about to normalize")
-        result = normalizer.normalize_xml_string(xml)
-        outs.puts("Tommy: result = #{result}")
-        outs.close
-        LOG.error("Tommy: finished")
-        result
+        normalizer.normalize_xml_string(xml)
+        #outs.puts("Tommy: result = #{result}")
+        #outs.close
+        #LOG.error("Tommy: finished")
+        #result
       end
     end
 
