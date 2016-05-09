@@ -1,6 +1,7 @@
 require 'json'
 require 'modsulator'
 require 'modsulator/normalizer'
+require './profiler'
 
 module Spreadsheet
 
@@ -46,21 +47,27 @@ module Spreadsheet
 
       # POST http://localhost:9292/v1/normalizer
       post do
-        LOG.error("Tommy: starting")
-        normalizer = Normalizer.new
-        LOG.error("Tommy: have a normalizer")
-        #outs = File.open("/tmp/received_file", "w")
-        input_file = File.open(params[:file][:tempfile])
-        xml = input_file.read
-        input_file.close
-        #outs.puts("Tommy: file = #{xml}")
+        p = Profiler.new
+        p.prof do 
+          LOG.error("Tommy: starting")
+          normalizer = Normalizer.new
+          LOG.error("Tommy: have a normalizer")
+          #outs = File.open("/tmp/received_file", "w")
+          input_file = File.open(params[:file][:tempfile])
+          xml = input_file.read
+          LOG.error("Tommy: read the XML")
+          input_file.close
+          #outs.puts("Tommy: file = #{xml}")
+          
+          LOG.error("Tommy about to normalize")
+          normalizer.normalize_xml_string(xml)
+          #outs.puts("Tommy: result = #{result}")  -- use rubyprof? or other profiling tool? new relic? see argo github
+          #outs.close
+          #LOG.error("Tommy: finished")
+          #result
+        end
 
-        LOG.error("Tommy about to normalize")
-        normalizer.normalize_xml_string(xml)
-        #outs.puts("Tommy: result = #{result}")
-        #outs.close
-        #LOG.error("Tommy: finished")
-        #result
+        p.print_results_call_tree("#{DateTime.now}.prof")
       end
     end
 
