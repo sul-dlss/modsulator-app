@@ -3,6 +3,7 @@ source "https://rubygems.org"
 gem "grape"
 gem 'modsulator'
 gem "bundler"
+gem "ruby-prof"
 
 group :test do
   gem "equivalent-xml", '>= 0.6.0'   # For ignoring_attr_values() with arguments
