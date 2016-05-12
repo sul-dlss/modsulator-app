@@ -39,8 +39,11 @@ module Spreadsheet
 
       # POST http://localhost:9292/v1/normalizer
       post do
+        input_file = File.open(params[:file][:tempfile])
+        xml = input_file.read
+        input_file.close
         normalizer = Normalizer.new
-        normalizer.normalize_xml_string(request.body.read)
+        normalizer.normalize_xml_string(xml)
       end
     end
 
