@@ -47,6 +47,7 @@ module Spreadsheet
 
       # POST http://localhost:9292/v1/normalizer
       post do
+        xml_result = nil
         p = Profiler.new
         p.prof do 
           LOG.error("Tommy: starting")
@@ -60,7 +61,7 @@ module Spreadsheet
           #outs.puts("Tommy: file = #{xml}")
           
           LOG.error("Tommy about to normalize")
-          normalizer.normalize_xml_string(xml)
+          xml_result = normalizer.normalize_xml_string(xml)
           #outs.puts("Tommy: result = #{result}")  -- use rubyprof? or other profiling tool? new relic? see argo github
           #outs.close
           #LOG.error("Tommy: finished")
@@ -68,6 +69,7 @@ module Spreadsheet
         end
 
         p.print_results_call_tree("#{DateTime.now}.prof")
+        xml_result
       end
     end
 
