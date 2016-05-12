@@ -1,7 +1,6 @@
 language: ruby
 script: bundle exec rake
 rvm:
-  - ruby-head
   - 2.2.4
 env:
   global:
