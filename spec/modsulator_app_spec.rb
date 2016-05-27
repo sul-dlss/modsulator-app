@@ -35,7 +35,7 @@ describe Spreadsheet::ModsulatorAPI do
   end
 
   it "returns normalized MODS XML given ugly MODS XML" do
-    post "/v1/normalizer", File.read(File.join(FIXTURES_DIR, 'denormalized.xml'))
+    post "/v1/normalizer", "file" => Rack::Test::UploadedFile.new(File.join(FIXTURES_DIR, 'denormalized.xml'))
     returned_xml = last_response.body
     expected_xml = File.read(File.join(FIXTURES_DIR, 'normalized.xml'))
     expect(returned_xml.to_s).to eq(expected_xml.to_s)
