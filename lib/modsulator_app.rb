@@ -11,12 +11,6 @@ module Spreadsheet
     format :txt
     default_format :txt
 
-    rescue_from :all do |e|
-      LOG.error("Caught an exception: #{e.message}")
-      LOG.error(e.backtrace.join("\n"))
-      error!("Caught an exception: #{e.message}")
-    end
-
     resource :about do
       # Simple ping to see if the application is up
       # GET http://localhost:9292/v1/about
