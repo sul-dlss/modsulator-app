@@ -21,6 +21,10 @@ module Spreadsheet
     end
 
     resource :modsulator do
+      get do
+        @version ||= IO.readlines('VERSION').first
+        "modsulator-api version #{@version}"
+      end
 
       # curl --form  file=@Fitch_Chavez.xml http://localhost:9292/v1/modsulator
       post do
@@ -30,6 +34,10 @@ module Spreadsheet
     end
 
     resource :normalizer do
+      get do
+        @version ||= IO.readlines('VERSION').first
+        "normalizer-api version #{@version}"
+      end
 
       # POST http://localhost:9292/v1/normalizer
       post do
