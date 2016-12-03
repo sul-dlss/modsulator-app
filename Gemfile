@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 gem "grape"
-gem 'modsulator'
+gem 'modsulator', :git => 'https://github.com/sul-dlss/modsulator.git', :branch => 'MetadataDept-ReleaseCandidate'
 gem "bundler"
 gem 'honeybadger', '~> 2.0'
 

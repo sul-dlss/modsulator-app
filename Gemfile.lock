@@ -1,3 +1,14 @@
+GIT
+  remote: https://github.com/sul-dlss/modsulator.git
+  revision: 4239661d6862a1b01cbb844f7f96e9a81eb1b3e1
+  branch: MetadataDept-ReleaseCandidate
+  specs:
+    modsulator (1.0.4.pre.beta.2)
+      activesupport
+      equivalent-xml (>= 0.6.0)
+      nokogiri
+      roo (>= 1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -76,11 +87,6 @@ GEM
     mime-types (2.99)
     mini_portile2 (2.1.0)
     minitest (5.9.0)
-    modsulator (1.0.3)
-      activesupport (< 5.0)
-      equivalent-xml (>= 0.6.0)
-      nokogiri
-      roo (>= 1.1)
     multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -104,7 +110,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
-    roo (2.4.0)
+    roo (2.5.1)
       nokogiri (~> 1)
       rubyzip (~> 1.1, < 2.0.0)
     rspec (3.4.0)
@@ -158,7 +164,10 @@ DEPENDENCIES
   equivalent-xml (>= 0.6.0)
   grape
   honeybadger (~> 2.0)
-  modsulator
+  modsulator!
   rack-test
   rake
   rspec (>= 3.0)
+
+BUNDLED WITH
+   1.13.6
