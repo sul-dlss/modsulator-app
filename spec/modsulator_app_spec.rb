@@ -20,6 +20,11 @@ describe Spreadsheet::ModsulatorAPI do
     expect(last_response.body).to match(/\d\.\d\.\d$/)
   end
 
+  it "returns the response with an xml content type" do
+    post "/v1/modsulator", "file" => Rack::Test::UploadedFile.new(File.join(FIXTURES_DIR, 'crowdsourcing_bridget_1.xlsx'), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"), "filename" => 'crowdsourcing_bridget_1.xlsx'
+    expect(last_response.headers['Content-Type']).to eq 'application/xml'
+  end
+
   it "returns correct XML for a known spreadsheet" do
     post "/v1/modsulator", "file" => Rack::Test::UploadedFile.new(File.join(FIXTURES_DIR, 'crowdsourcing_bridget_1.xlsx'), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"), "filename" => 'crowdsourcing_bridget_1.xlsx'
     returned_xml = Nokogiri::XML(last_response.body)
@@ -40,6 +45,12 @@ describe Spreadsheet::ModsulatorAPI do
     expected_xml = File.read(File.join(FIXTURES_DIR, 'normalized.xml'))
     expect(returned_xml.to_s).to eq(expected_xml.to_s)
   end
+
+  it "returns the response with an xml content type" do
+    post "/v1/normalizer", "file" => Rack::Test::UploadedFile.new(File.join(FIXTURES_DIR, 'denormalized.xml'))
+    expect(last_response.headers['Content-Type']).to eq 'application/xml'
+  end
+
 
   it "returns the correct spreadsheet template" do
     get "/v1/spreadsheet"

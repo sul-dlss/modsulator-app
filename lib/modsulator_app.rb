@@ -28,6 +28,7 @@ module Spreadsheet
 
       # curl --form  file=@Fitch_Chavez.xml http://localhost:9292/v1/modsulator
       post do
+        header 'Content-Type', 'application/xml'
         mods_converter = Modsulator.new(File.new(params[:file][:tempfile]), params[:filename])
         mods_converter.convert_rows()
       end
@@ -44,6 +45,7 @@ module Spreadsheet
         input_file = File.open(params[:file][:tempfile])
         xml = input_file.read
         input_file.close
+        header 'Content-Type', 'application/xml'
         normalizer = Normalizer.new
         normalizer.normalize_xml_string(xml)
       end
