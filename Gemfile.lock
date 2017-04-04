@@ -88,7 +88,7 @@ GEM
       net-ssh (>= 2.6.5)
     net-ssh (3.0.2)
     netrc (0.11.0)
-    nokogiri (1.6.8.1)
+    nokogiri (1.7.1)
       mini_portile2 (~> 2.1.0)
     rack (1.6.4)
     rack-accept (0.4.5)
@@ -118,7 +118,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.4.0)
     rspec-support (3.4.1)
-    rubyzip (1.2.0)
+    rubyzip (1.2.1)
     simplecov (0.11.2)
       docile (~> 1.1.0)
       json (~> 1.8)
@@ -162,4 +162,4 @@ DEPENDENCIES
   rspec (>= 3.0)
 
 BUNDLED WITH
-   1.13.6
+   1.14.6
