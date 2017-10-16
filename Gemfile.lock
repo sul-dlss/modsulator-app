@@ -68,7 +68,7 @@ GEM
     i18n (0.8.1)
     ice_nine (0.11.2)
     json (2.1.0)
-    mini_portile2 (2.1.0)
+    mini_portile2 (2.3.0)
     minitest (5.10.1)
     modsulator (1.0.5)
       activesupport
@@ -83,8 +83,8 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (4.1.0)
-    nokogiri (1.7.1)
-      mini_portile2 (~> 2.1.0)
+    nokogiri (1.8.1)
+      mini_portile2 (~> 2.3.0)
     rack (2.0.1)
     rack-accept (0.4.5)
       rack (>= 0.4)
@@ -148,4 +148,4 @@ DEPENDENCIES
   rspec (>= 3.0)
 
 BUNDLED WITH
-   1.14.6
+   1.15.4
