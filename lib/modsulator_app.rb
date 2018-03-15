@@ -1,9 +1,7 @@
 require 'json'
 require 'modsulator'
-require 'modsulator/normalizer'
 
 module Spreadsheet
-
   class ModsulatorAPI < Grape::API
 
     version 'v1', :using => :path
@@ -46,7 +44,7 @@ module Spreadsheet
         xml = input_file.read
         input_file.close
         header 'Content-Type', 'application/xml'
-        normalizer = Normalizer.new
+        normalizer = Stanford::Mods::Normalizer.new
         normalizer.normalize_xml_string(xml)
       end
     end
