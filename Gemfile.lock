@@ -83,7 +83,7 @@ GEM
     rack (2.0.4)
     rack-accept (0.4.5)
       rack (>= 0.4)
-    rack-test (0.8.2)
+    rack-test (0.8.3)
       rack (>= 1.0, < 3)
     rake (12.3.0)
     roo (2.5.1)
@@ -143,4 +143,4 @@ DEPENDENCIES
   rspec (>= 3.0)
 
 BUNDLED WITH
-   1.16.0
+   1.16.1
