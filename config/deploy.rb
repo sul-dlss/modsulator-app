@@ -35,8 +35,11 @@ set :linked_dirs, ['log', 'tmp']
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-namespace :deploy do
+# honeybadger_env otherwise defaults to rails_env
+# we want prod rather than production
+set :honeybadger_env, fetch(:stage)
 
+namespace :deploy do
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
       # Your restart mechanism here, for example:
@@ -54,5 +57,4 @@ namespace :deploy do
       # end
     end
   end
-
 end
