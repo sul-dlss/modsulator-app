@@ -4,6 +4,7 @@ gem "grape"
 gem 'modsulator'
 gem "bundler"
 gem 'honeybadger', '~> 2.0'
+gem 'stanford-mods-normalizer'
 
 group :test do
   gem "equivalent-xml", '>= 0.6.0'   # For ignoring_attr_values() with arguments
