@@ -3,7 +3,7 @@ source "https://rubygems.org"
 gem "grape"
 gem 'modsulator'
 gem "bundler"
-gem 'honeybadger', '~> 2.0'
+gem 'honeybadger'
 gem 'stanford-mods-normalizer'
 
 group :test do
