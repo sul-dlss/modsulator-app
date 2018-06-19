@@ -61,9 +61,8 @@ module Spreadsheet
 
       # GET http://localhost:9292/v1/spreadsheet
       get do
-        Modsulator.get_template_spreadsheet()
+        IO.read(Modsulator.template_spreadsheet_path, mode: 'rb')
       end
     end
-
   end #class
 end # module
